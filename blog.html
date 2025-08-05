@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Blog - Fitness Tracker</title>
+  <style>
+    body {
+      background: #f0f0f0;
+      font-family: Helvetica, sans-serif;
+      margin: 0;
+      padding: 0;
+    }
+
+    /* Navbar */
+    .navbar {
+      background-color: #0077cc;
+      display: flex;
+      justify-content: center;
+      padding: 1rem;
+    }
+
+    .navbar ul {
+      list-style: none;
+      display: flex;
+      gap: 1.5rem;
+      padding: 0;
+      margin: 0;
+    }
+
+    .navbar ul li a {
+      color: white;
+      text-decoration: none;
+      font-weight: 500;
+    }
+
+    .navbar ul li a.active,
+    .navbar ul li a:hover {
+      text-decoration: underline;
+    }
+
+    /* Header */
+    header {
+      text-align: center;
+      font-size: 2rem;
+      color: #0077cc;
+      padding: 2rem 1rem 1rem;
+      font-weight: bold;
+    }
+
+    /* Blog Section */
+    .features {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 2rem;
+      padding: 2rem;
+    }
+
+    .feature-card {
+      background: #fff;
+      padding: 1.5rem;
+      border-radius: 12px;
+      box-shadow: 0 5px 14px rgba(0, 0, 0, 0.1);
+      width: 300px;
+      text-align: center;
+      transition: transform 0.3s ease;
+    }
+
+    .feature-card:hover {
+      transform: translateY(-5px);
+    }
+
+    .feature-card img {
+      width: 70px;
+      margin-bottom: 1rem;
+    }
+
+    .feature-card h3 {
+      color: #0077cc;
+      margin-bottom: 0.5rem;
+    }
+
+    .feature-card p {
+      color: #333;
+      font-size: 0.95rem;
+      line-height: 1.5;
+      margin-bottom: 1rem;
+    }
+
+    .read-more-btn {
+      background-color: #0077cc;
+      color: white;
+      border: none;
+      padding: 0.5rem 1rem;
+      border-radius: 6px;
+      cursor: pointer;
+      font-size: 0.9rem;
+    }
+
+    .read-more-btn:hover {
+      background-color: #005fa3;
+    }
+
+    /* Footer */
+    footer {
+      background: #0077cc;
+      color: white;
+      text-align: center;
+      padding: 1rem;
+      margin-top: 2rem;
+    }
+
+    @media (max-width: 768px) {
+      .features {
+        flex-direction: column;
+        align-items: center;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Navbar -->
+  <nav class="navbar">
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="plan.html">Plan</a></li>
+      <li><a href="schedule.html">Schedule</a></li>
+      <li><a href="blog.html" class="active">Blog</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+  </nav>
+
+  <!-- Header -->
+  <header>Fitness Blog</header>
+
+  <!-- Blog Section -->
+  <main>
+    <section class="features">
+
+      <!-- Blog Card 1 -->
+      <div class="feature-card">
+        <img src="https://img.icons8.com/ios-filled/100/0077cc/vegetarian-food.png" alt="Nutrition Icon" />
+        <h3>Nutrition Tips</h3>
+        <p>Discover the best foods to fuel your body, build muscle, and burn fat effectively.</p>
+         <button onclick="location.href='Nutrition.html'" class="read-more-btn">Read More</button>
+      </div>
+
+      <!-- Blog Card 2 -->
+      <div class="feature-card">
+        <img src="https://img.icons8.com/ios-filled/100/0077cc/dumbbell.png" alt="Workout Icon" />
+        <h3>Workout Routines</h3>
+        <p>Explore effective beginner-to-advanced workout plans tailored to your fitness goals.</p>
+         <button onclick="location.href='workout.html'" class="read-more-btn">Read More</button>
+      </div>
+
+      <!-- Blog Card 3 -->
+      <div class="feature-card">
+        <img src="https://img.icons8.com/ios-filled/100/0077cc/mind-map.png" alt="Mindset Icon" />
+        <h3>Motivation & Mindset</h3>
+        <p>Learn how to stay motivated, overcome mental blocks, and maintain discipline long-term.</p>
+        <button onclick="location.href='minset.html'" class="read-more-btn">Read More</button>
+
+      </div>
+
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer>&copy; 2025 Fitness Tracker. All Rights Reserved.</footer>
+
+</body>
+</html>

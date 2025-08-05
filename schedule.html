@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Schedule - Fitness Tracker</title>
+  <style>
+    body {
+      background: #f8fbff;
+      font-family: Verdana, sans-serif;
+      margin: 0;
+      padding: 0;
+    }
+
+    /* Navbar */
+    .navbar {
+      background-color: #0077cc;
+      display: flex;
+      justify-content: center;
+      padding: 1rem;
+    }
+
+    .navbar ul {
+      list-style: none;
+      display: flex;
+      gap: 1.5rem;
+      padding: 0;
+      margin: 0;
+    }
+
+    .navbar ul li a {
+      color: white;
+      text-decoration: none;
+      font-weight: 500;
+    }
+
+    .navbar ul li a.active,
+    .navbar ul li a:hover {
+      text-decoration: underline;
+    }
+
+    /* Header */
+    header {
+      text-align: center;
+      font-size: 2rem;
+      color: #0077cc;
+      padding: 2rem 1rem 1rem;
+      font-weight: bold;
+    }
+
+    /* Feature Section */
+    .features {
+      display: flex;
+      justify-content: center;
+      padding: 2rem;
+    }
+
+    .feature-card {
+      background: #fff;
+      padding: 2rem;
+      border-radius: 12px;
+      box-shadow: 0 5px 14px rgba(0, 0, 0, 0.1);
+      max-width: 700px;
+      text-align: center;
+    }
+
+    .feature-card img {
+      width: 80px;
+      margin-bottom: 1rem;
+    }
+
+    .feature-card h3 {
+      color: #0077cc;
+      margin-bottom: 0.5rem;
+    }
+
+    .feature-card p {
+      color: #444;
+      font-size: 1rem;
+      line-height: 1.6;
+    }
+
+    /* Schedule Table */
+    .schedule-table {
+      width: 90%;
+      margin: 2rem auto;
+      border-collapse: collapse;
+    }
+
+    .schedule-table th,
+    .schedule-table td {
+      padding: 12px;
+      border: 1px solid #ddd;
+      text-align: center;
+    }
+
+    .schedule-table th {
+      background-color: #0077cc;
+      color: white;
+    }
+
+    .schedule-table tr:nth-child(even) {
+      background-color: #f1f1f1;
+    }
+
+    /* Footer */
+    footer {
+      background: #0077cc;
+      color: white;
+      text-align: center;
+      padding: 1rem;
+      margin-top: 2rem;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Navbar -->
+  <nav class="navbar">
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="plan.html">Plan</a></li>
+      <li><a href="schedule.html" class="active">Schedule</a></li>
+      <li><a href="blog.html">Blog</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+  </nav>
+
+  <!-- Page Header -->
+  <header>Workout Schedule</header>
+
+  <!-- Feature Section -->
+  <main>
+    <section class="features">
+      <div class="feature-card">
+        <img src="https://img.icons8.com/ios-filled/100/0077cc/calendar.png" alt="Schedule Icon" />
+        <h3>Schedule Workouts</h3>
+        <p>Stay on track with your personalized workout schedule. Plan your week, set reminders, and never miss a session again.</p>
+      </div>
+    </section>
+
+    <!-- Sample Schedule Table -->
+    <table class="schedule-table">
+      <thead>
+        <tr>
+          <th>Day</th>
+          <th>Workout</th>
+          <th>Time</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Monday</td>
+          <td>Full Body</td>
+          <td>7:00 AM</td>
+        </tr>
+        <tr>
+          <td>Tuesday</td>
+          <td>Cardio</td>
+          <td>6:30 AM</td>
+        </tr>
+        <tr>
+          <td>Wednesday</td>
+          <td>Upper Body</td>
+          <td>7:00 AM</td>
+        </tr>
+        <tr>
+          <td>Thursday</td>
+          <td>Yoga</td>
+          <td>6:00 AM</td>
+        </tr>
+        <tr>
+          <td>Friday</td>
+          <td>Lower Body</td>
+          <td>7:30 AM</td>
+        </tr>
+        <tr>
+          <td>Saturday</td>
+          <td>HIIT</td>
+          <td>8:00 AM</td>
+        </tr>
+        <tr>
+          <td>Sunday</td>
+          <td>Rest Day</td>
+          <td>-</td>
+        </tr>
+      </tbody>
+    </table>
+  </main>
+
+  <!-- Footer -->
+  <footer>&copy; 2025 Fitness Tracker. All Rights Reserved.</footer>
+
+</body>
+</html>

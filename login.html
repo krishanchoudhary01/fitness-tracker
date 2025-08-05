@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Neon Login / Sign Up / Forgot Password</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+  <style>
+    body {
+      background: radial-gradient(circle at 80% 20%, #00d2ff 0%, #590fb7 100%);
+      min-height: 100vh;
+      margin: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: 'Segoe UI', Arial, sans-serif;
+      overflow: hidden;
+    }
+    .neon-card {
+      width: 360px;
+      padding: 40px 32px 30px 32px;
+      border-radius: 22px;
+      background: rgba(25, 29, 59, 0.80);
+      box-shadow: 0 6px 30px #5a00ff77, 0 2px 24px #0ff0fc36;
+      backdrop-filter: blur(16px);
+      border: 2px solid #120e2d8c;
+      position: relative;
+      overflow: hidden;
+      animation: fadepop 0.95s cubic-bezier(.51, 1.47, .67, .92);
+    }
+    @keyframes fadepop {
+      0% {
+        transform: scale(0.93) translateY(120px);
+        opacity: 0;
+      }
+      70% {
+        transform: scale(1.04) translateY(-6px);
+      }
+      100% {
+        transform: scale(1) translateY(0);
+        opacity: 1;
+      }
+    }
+    .neon-card:before {
+      content: "";
+      pointer-events: none;
+      position: absolute;
+      top: -70px;
+      left: -85px;
+      width: 230px;
+      height: 220px;
+      background: radial-gradient(circle, #0ff0fc77 18%, #590fb755 100%);
+      z-index: 1;
+      filter: blur(36px);
+    }
+    .neon-card * {
+      position: relative;
+      z-index: 2;
+    }
+    .neon-card h2 {
+      text-align: center;
+      color: #f2fdff;
+      font-weight: 700;
+      letter-spacing: 1px;
+      margin-bottom: 28px;
+      font-size: 1.55em;
+      text-shadow: 0 2px 22px #00fff79c;
+    }
+    .input-group {
+      margin-bottom: 20px;
+      position: relative;
+      display: flex;
+      align-items: center;
+      background: rgba(255, 255, 255, 0.09);
+      border-radius: 13px;
+      box-shadow: 0 1px 8px #0ff0fc22;
+    }
+    .input-group i {
+      color: #0ff0fc;
+      font-size: 1.17em;
+      margin-left: 13px;
+      margin-right: 8px;
+      transition: color 0.18s;
+    }
+    .input-group input {
+      width: 100%;
+      border: none;
+      outline: none;
+      background: transparent;
+      color: #e6f3fc;
+      font-size: 1.10em;
+      padding: 13px 0 13px 0;
+      margin-right: 14px;
+      border-radius: 13px;
+      letter-spacing: 0.4px;
+    }
+    .input-group input::placeholder {
+      color: #91b7d987;
+      letter-spacing: 0.3px;
+    }
+    .input-group input:focus,
+    .input-group input:focus ~ i {
+      color: #00ffb3;
+    }
+    .action-btn {
+      width: 100%;
+      padding: 13px 0;
+      background: linear-gradient(90deg, #00ffb3 0%, #0ff0fc 100%);
+      border: none;
+      color: #142345;
+      font-size: 1.12em;
+      font-weight: 600;
+      border-radius: 10px;
+      margin-top: 8px;
+      cursor: pointer;
+      box-shadow: 0 2px 18px #0ff0fc81;
+      letter-spacing: 1px;
+      transition: background 0.22s, color 0.15s, transform 0.13s;
+    }
+    .action-btn:hover,
+    .action-btn:focus {
+      background: linear-gradient(90deg, #590fb7 0%, #00d2ff 100%);
+      color: #f2fdff;
+      transform: scale(1.045);
+      box-shadow: 0 2px 28px #00d2ff69;
+    }
+    .switch-link {
+      display: inline-block;
+      color: #0ff0fc;
+      margin: 0 4px;
+      font-weight: 600;
+      cursor: pointer;
+      text-decoration: underline;
+      font-size: 0.98em;
+      margin-top: 12px;
+      transition: color 0.18s;
+    }
+    .switch-link:hover {
+      color: #00ffb3;
+    }
+    /* Hide/Show Forms */
+    .form-section {
+      display: none;
+    }
+    .form-section.active {
+      display: block;
+    }
+	.new{
+	color:white;
+	}
+    /* Responsive */
+    @media (max-width: 450px) {
+      .neon-card {
+        width: 98vw;
+        padding: 32px 3vw;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="neon-card">
+    <!-- Login Form -->
+    <form class="form-section active" id="loginForm" autocomplete="off">
+      <h2>Login</h2>
+      <div class="input-group">
+        <i class="fa fa-user"></i>
+        <input type="text" placeholder="Username or Email" required />
+      </div>
+      <div class="input-group">
+        <i class="fa fa-lock"></i>
+        <input type="password" placeholder="Password" required />
+      </div>
+      <button type="submit" class="action-btn">Log In</button>
+      <div style="text-align: center; margin-top: 9px;">
+        <span class="new">Don't have an account? </span>
+        <span class="switch-link" onclick="showSection('registerForm')">Sign Up</span> |
+        <span class="switch-link" onclick="showSection('forgotForm')">Forgot Password?</span>
+      </div>
+    </form>
+
+    <!-- Sign Up Form -->
+    <form class="form-section" id="registerForm" autocomplete="off">
+      <h2>Sign Up</h2>
+      <div class="input-group">
+        <i class="fa fa-user"></i>
+        <input type="text" placeholder="Username" required />
+      </div>
+      <div class="input-group">
+        <i class="fa fa-envelope"></i>
+        <input type="email" placeholder="Email" required />
+      </div>
+      <div class="input-group">
+        <i class="fa fa-lock"></i>
+        <input type="password" placeholder="Password" required />
+      </div>
+      <button type="submit" class="action-btn">Sign Up</button>
+      <div style="text-align: center; margin-top: 9px;">
+        <span class="switch-link" onclick="showSection('loginForm')">Already have an account?</span>
+      </div>
+    </form>
+
+    <!-- Forgot Password Form -->
+    <form class="form-section" id="forgotForm" autocomplete="off">
+      <h2>Forgot Password</h2>
+      <div class="input-group">
+        <i class="fa fa-envelope"></i>
+        <input type="email" placeholder="Enter your email" required />
+      </div>
+      <button type="submit" class="action-btn">Send Reset Link</button>
+      <div style="text-align: center; margin-top: 9px;">
+        <span class="switch-link" onclick="showSection('loginForm')">Back to Login</span>
+      </div>
+    </form>
+  </div>
+
+  <script>
+    // Function to switch visible form
+    function showSection(formId) {
+      document.querySelectorAll('.form-section').forEach((form) => {
+        form.classList.remove('active');
+      });
+      document.getElementById(formId).classList.add('active');
+	  
+    }
+  </script>
+  <script>
+  // Switch form visibility
+  function showSection(formId) {
+    document.querySelectorAll('.form-section').forEach((form) => {
+      form.classList.remove('active');
+    });
+    document.getElementById(formId).classList.add('active');
+  }
+
+  // Login form redirect
+  document.getElementById('loginForm').addEventListener('submit', function(event) {
+    event.preventDefault(); // Form submit rokna
+    // Aap yahan login validation bhi kar sakte ho
+    window.location.href = "index.html"; // ? Replace with your actual home page file name
+  });
+</script>
+
+</body>
+</html>
